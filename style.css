@@ -1,0 +1,109 @@
+/* General Styles */
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  background-color: #f4f4f4;
+}
+
+header {
+  background-color: #ff6347;
+  color: white;
+  padding: 10px;
+  text-align: center;
+}
+
+h1, h2 {
+  margin: 20px 0;
+}
+
+main {
+  padding: 20px;
+}
+
+section {
+  margin-bottom: 40px;
+}
+
+/* Personalized Table Booking */
+#personalized-table-section, #virtual-queue-section, #digital-menu-section {
+  background-color: #ffffff;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+label, select, button, input {
+  display: block;
+  margin: 10px 0;
+  padding: 8px;
+}
+
+/* Digital Menu */
+#digital-menu-section img {
+  width: 100px;
+  height: 100px;
+  object-fit: cover;
+  border-radius: 10px;
+  margin-right: 10px;
+}
+
+#menuItems {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+}
+
+.menu-item {
+  display: flex;
+  align-items: center;
+  padding: 10px;
+  border: 1px solid #ddd;
+  border-radius: 10px;
+  background-color: #fff;
+}
+
+.menu-item label {
+  font-weight: bold;
+  margin-left: 10px;
+}
+
+/* Payment Section */
+#payment-section input, #payment-section button {
+  width: 100%;
+  padding: 10px;
+  margin: 10px 0;
+}
+
+/* Crowd Analytics */
+canvas {
+  margin-top: 20px;
+}
+// Populate the digital menu with customization options, Jain food option, and pictures
+function populateDigitalMenu() {
+  const menuContainer = document.getElementById('menuItems');
+  menuContainer.innerHTML = ''; // Clear existing items
+
+  menuItems.forEach(item => {
+    const menuItemDiv = document.createElement('div');
+    menuItemDiv.classList.add('menu-item');
+
+    const img = document.createElement('img');
+    img.src = item.img; // Add image from the menu item
+    img.alt = item.name;
+
+    const label = document.createElement('label');
+    label.innerHTML = `<input type="checkbox" value="${item.name},${item.price}"> ${item.name} - $${item.price}`;
+
+    const customization = document.createElement('select');
+    customization.innerHTML = `<option value="">No customization</option>`;
+    item.customization.forEach(option => {
+      customization.innerHTML += `<option value="${option}">${option}</option>`;
+    });
+
+    menuItemDiv.appendChild(img);
+    menuItemDiv.appendChild(label);
+    menuItemDiv.appendChild(customization);
+    menuContainer.appendChild(menuItemDiv);
+  });
+}

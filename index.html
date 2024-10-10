@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Restaurant Booking App</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header>
+    <h1>Welcome to the Restaurant</h1>
+  </header>
+
+  <main>
+    <!-- Personalized Table Section -->
+    <section id="personalized-table-section">
+      <h2>Personalized Table Booking</h2>
+      <form id="tableForm">
+        <label for="tablePreference">Table Preference:</label>
+        <select id="tablePreference">
+          <option value="window">Window Seat</option>
+          <option value="outdoor">Outdoor Seating</option>
+          <option value="booth">Booth</option>
+          <option value="quiet">Quiet Area</option>
+        </select>
+        <button type="button" id="bookTableBtn">Book Table</button>
+      </form>
+      <p id="bookingStatus"></p>
+    </section>
+
+    <!-- Virtual Queue Section -->
+    <section id="virtual-queue-section">
+      <h2>Virtual Queue</h2>
+      <button id="joinQueueBtn">Join Virtual Queue</button>
+      <p id="queueStatus"></p>
+      <p id="queuePosition"></p>
+      <p id="estimatedWait"></p>
+    </section>
+
+    <!-- Digital Menu Section with Pictures -->
+    <section id="digital-menu-section">
+      <h2>Digital Menu</h2>
+      <form id="menuForm">
+        <div id="menuItems"></div>
+        <button type="button" id="preOrderBtn">Pre-Order</button>
+      </form>
+      <p id="preOrderStatus"></p>
+    </section>
+
+    <!-- Real-Time Notification Section -->
+    <section id="real-time-notification-section">
+      <h2>Real-Time Updates and Notifications</h2>
+      <p id="notificationMessage">No notifications yet.</p>
+    </section>
+
+    <!-- Popular Menu Section -->
+    <section id="popular-menu-section">
+      <h2>Most Popular Menu Items</h2>
+      <ul id="popularMenu">
+        <!-- Popular menu items will be dynamically updated here -->
+      </ul>
+    </section>
+
+    <!-- Payment Section -->
+    <section id="payment-section">
+      <h2>Payment</h2>
+      <form id="paymentForm">
+        <label for="upiId">UPI ID:</label>
+        <input type="text" id="upiId" placeholder="user@upi" required>
+        <button type="button" id="upiPayBtn">Pay with UPI</button>
+      </form>
+      <p id="upiPaymentStatus"></p>
+    </section>
+
+    <!-- Crowd Analytics Section -->
+    <section id="analytics-section">
+      <h2>Crowd Analytics Dashboard</h2>
+      <canvas id="crowdChart" width="400" height="400"></canvas>
+      <h3>Insights</h3>
+      <p id="peakTime">Peak Time: </p>
+      <p id="popularItem">Most Popular Menu Item: </p>
+      <p id="tableUtilization">Table Utilization: </p>
+    </section>
+  </main>
+
+  <footer>
+    <p>© 2024 Restaurant Booking App</p>
+  </footer>
+
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+  <script src="script.js"></script>
+</body>
+</html>
